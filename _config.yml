@@ -1,0 +1,8 @@
+title: "wsite — Rails 8 Learning Path"
+description: "A hands-on Rails 8 refresher, milestone by milestone."
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false

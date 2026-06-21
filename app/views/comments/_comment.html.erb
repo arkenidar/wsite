@@ -1,0 +1,10 @@
+<div id="<%= dom_id comment %>" class="comment" style="border-top: 1px solid #ddd; padding: 8px 0;">
+  <p style="margin: 0 0 4px;"><%= comment.body %></p>
+  <small style="color: #888;">
+    <%= time_ago_in_words(comment.created_at) %> ago
+    <%= button_to "Delete", [ comment.post, comment ], method: :delete,
+          form: { style: "display: inline" },
+          data: { turbo_confirm: "Delete this comment?" },
+          style: "border: none; background: none; color: #c00; cursor: pointer; padding: 0; font: inherit;" %>
+  </small>
+</div>

@@ -1,0 +1,7 @@
+<%# Append the new comment to the #comments list... %>
+<%= turbo_stream.append "comments", @comment %>
+
+<%# ...and reset the form by replacing it with a blank one. %>
+<%= turbo_stream.replace "new_comment",
+      partial: "comments/form",
+      locals: { post: @post, comment: Comment.new } %>

@@ -8,3 +8,14 @@
 
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+<section style="margin-top: 2rem;">
+  <h2>Comments</h2>
+
+  <%# turbo_stream.append/remove target this list by its id %>
+  <div id="comments">
+    <%= render @post.comments %>
+  </div>
+
+  <%= render "comments/form", post: @post, comment: Comment.new %>
+</section>

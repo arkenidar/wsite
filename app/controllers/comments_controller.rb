@@ -7,6 +7,10 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        # Hand off the (potentially slow) notification to a background job so the
+        # web request returns immediately.
+        NotifyAuthorJob.perform_later(@comment)
+
         # create.turbo_stream.erb appends the comment and resets the form
         format.turbo_stream
         format.html { redirect_to @post, notice: "Comment added." }

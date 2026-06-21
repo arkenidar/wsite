@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
-  published: false
+  title: Welcome to wsite
+  body: The first published post on this learning site.
+  published: true
 
 two:
-  title: MyString
-  body: MyText
+  title: A work in progress
+  body: This one is not published yet.
   published: false

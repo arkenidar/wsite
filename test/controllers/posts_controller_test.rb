@@ -23,6 +23,14 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to post_url(Post.last)
   end
 
+  test "should not create invalid post and re-render form" do
+    assert_no_difference("Post.count") do
+      post posts_url, params: { post: { title: "", body: "" } }
+    end
+
+    assert_response :unprocessable_content
+  end
+
   test "should show post" do
     get post_url(@post)
     assert_response :success

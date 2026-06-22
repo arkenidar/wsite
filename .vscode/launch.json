@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "ruby_lsp",
+      "name": "Rails server",
+      "request": "launch",
+      "program": "bin/rails server"
+    },
+    {
+      "type": "ruby_lsp",
+      "name": "Solid Queue worker",
+      "request": "launch",
+      "program": "bin/jobs"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Dev: server + jobs",
+      "configurations": ["Rails server", "Solid Queue worker"],
+      "stopAll": true
+    }
+  ]
+}

@@ -17,6 +17,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          bundler-cache-true-ignore-gemfile-changes: false
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
@@ -35,6 +36,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          bundler-cache-true-ignore-gemfile-changes: false
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
@@ -51,6 +53,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          bundler-cache-true-ignore-gemfile-changes: false
 
       - name: Prepare RuboCop cache
         uses: actions/cache@v6
@@ -85,6 +88,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          bundler-cache-true-ignore-gemfile-changes: false
 
       - name: Run tests
         env:
@@ -113,6 +117,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          bundler-cache-true-ignore-gemfile-changes: false
 
       - name: Run System Tests
         env:
